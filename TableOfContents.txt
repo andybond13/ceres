@@ -1,0 +1,8 @@
+<ceres> project
+
+Table of Contents:
+==================
+
+
+-README.me		:	summary of <ceres> project
+-LICENSE		:	code license and copyright
