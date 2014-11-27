@@ -110,8 +110,9 @@ for i in range(0,len(date)):
 
 f = open("zauba_output.csv",'w')
 
+header = "#type,date,month,year,HScode,description,destOrigin,port,unit,qty,value,valueperunit"
+f.write(header)
 for i in range(0,len(date)):
-#    print type[i],date[i],month[i],year[i],HScode[i],description[i],destOrigin[i],port[i],unit[i],qty[i],value[i],valueperunit[i]
     line = "%s,%s,%u,%u,%u,%s,%s,%s,%s,%f,%f,%f\n" % (type[i],date[i],month[i],year[i],int(HScode[i]),description[i],destOrigin[i],port[i],unit[i],str2num(qty[i]),str2num(value[i]),str2num(valueperunit[i]))
     f.write(line)
 
