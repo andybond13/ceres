@@ -10,6 +10,11 @@ def yearOfDate(date):
     date = date[hyp+1:]
     return int(date)
 
+def dayOfDate(date):
+    hyp = date.find("-")
+    date = date[0:hyp]
+    return int(date)
+
 def monthOfDate(date):
     if "Jan" in date:
         return 1
