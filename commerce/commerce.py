@@ -3,6 +3,8 @@
 
 def str2num(a):
     #remove comma from large numbers
+    if (len(a) == 0):
+        return 0
     return float(a.replace(',',''))
 
 import sys
@@ -39,7 +41,8 @@ response = br.submit()
 #read results
 from bs4 import BeautifulSoup
 
-page = open('tmp.htm','r')
+#page = open('tmp.htm','r')
+page = response.read() 
 soup = BeautifulSoup(page)
 
 allTR = soup.find_all('tr')
