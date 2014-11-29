@@ -103,17 +103,19 @@ for i in range(0,len(allTR)):
     valueperunit.append(tds[8].text.strip())		
 
 month = []
+day = []
 year = []
 for i in range(0,len(date)):
     month.append(monthOfDate(date[i]))
+    day.append(dayOfDate(date[i]))
     year.append(yearOfDate(date[i]))
 
 f = open("zauba_output.csv",'w')
 
-header = "#type,date,month,year,HScode,description,destOrigin,port,unit,qty,value,valueperunit"
+header = "#date,month,day,year,type,HScode,description,destOrigin,port,unit,qty,value,valueperunit\n"
 f.write(header)
 for i in range(0,len(date)):
-    line = "%s,%s,%u,%u,%u,%s,%s,%s,%s,%f,%f,%f\n" % (type[i],date[i],month[i],year[i],int(HScode[i]),description[i],destOrigin[i],port[i],unit[i],str2num(qty[i]),str2num(value[i]),str2num(valueperunit[i]))
+    line = "%s,%u,%u,%u,%s,%u,%s,%s,%s,%s,%f,%f,%f\n" % (date[i],month[i],day[i],year[i],type[i],int(HScode[i]),description[i],destOrigin[i],port[i],unit[i],str2num(qty[i]),str2num(value[i]),str2num(valueperunit[i]))
     f.write(line)
 
 f.close()
