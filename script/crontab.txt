@@ -1,0 +1,5 @@
+#minute hour day month day-of-week command-line-to-execute
+#set to run weekly at midnight on Sunday
+0 0 * * 0 python ../commerce/commerce.py
+0 0 * * 0 python ../nhb/nhb.py
+0 0 * * 0 python ../zauba/zauba.py
