@@ -43,11 +43,15 @@ def monthOfDate(date):
     return -1
 
 from bs4 import BeautifulSoup
+import sys
 import urllib2
+
+reload(sys)
+sys.setdefaultencoding( "latin-1" )
 
 #set target url
 urlEx = 'https://www.zauba.com/export-tomato+puree-hs-code.html'
-urlIm = 'https://www.zauba.com/export-tomato+puree-hs-code.html'
+urlIm = 'https://www.zauba.com/import-tomato+puree-hs-code.html'
 
 #export
 page = urllib2.urlopen(urlEx)
@@ -76,9 +80,9 @@ for i in range(0,len(allTR)):
     date.append(tds[0].text.strip())	
     type.append("Export")
     HScode.append(tds[1].text.strip())		
-    description.append(tds[2].text.strip())		
-    destOrigin.append(tds[3].text.strip())
-    port.append(tds[4].text.strip())	
+    description.append(tds[2].text.strip().replace(',',''))		
+    destOrigin.append(tds[3].text.strip().replace(',',''))
+    port.append(tds[4].text.strip().replace(',',''))	
     unit.append(tds[5].text.strip())	
     qty.append(tds[6].text.strip())	
     value.append(tds[7].text.strip())		
@@ -99,9 +103,9 @@ for i in range(0,len(allTR)):
     date.append(tds[0].text.strip())
     type.append("Import")	
     HScode.append(tds[1].text.strip())		
-    description.append(tds[2].text.strip())		
-    destOrigin.append(tds[3].text.strip())
-    port.append(tds[4].text.strip())	
+    description.append(tds[2].text.strip().replace(',',''))	
+    destOrigin.append(tds[3].text.strip().replace(',',''))
+    port.append(tds[4].text.strip().replace(',',''))	
     unit.append(tds[5].text.strip())	
     qty.append(tds[6].text.strip())	
     value.append(tds[7].text.strip())		
