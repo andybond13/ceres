@@ -10,11 +10,11 @@ export ceres=~/Code/ceres
 # see how all the / slashes in the address now have to be \/, that's it!
 perl -pi -e 's/\$ceres/~\/Code\/ceres/g' crontab.tcsh
 perl -pi -e 's/\$ceres/~\/Code\/ceres/g' crontab.bash
-#(3) edit this line!: ~/local/lib/python2.6/site-packages
+#(3) edit this line: ~/local/lib/python2.6/site-packages/
+export PYP=~/local/lib/python2.6/site-packages/
+#(4) edit this line!: ~/local/lib/python2.6/site-packages
 perl -pi -e 's/\$PYP/~\/local\/lib\/python2.6\/site-packages/g' crontab.tcsh
 perl -pi -e 's/\$PYP/~\/local\/lib\/python2.6\/site-packages/g' crontab.bash
-#(4) edit this line: ~/local/lib/python2.6/site-packages/
-export PYP=~/local/lib/python2.6/site-packages/
 
 if [[ $SHELL == *"bash"* ]]
 then
