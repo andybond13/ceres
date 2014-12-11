@@ -44,7 +44,7 @@ datevar=str(date_used)[8:10]+'/'+str(date_used)[5:7]+'/'+str(date_used)[0:4]
 day = str(date_used)[8:10]
 month = str(date_used)[5:7]
 year = str(date_used)[0:4]
-print datevar
+print "date: dd/mm/yyyy",datevar
 
 br.select_form(nr=0)
 br['txtdate'] = datevar
